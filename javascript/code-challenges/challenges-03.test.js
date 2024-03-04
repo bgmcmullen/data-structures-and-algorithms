@@ -8,8 +8,8 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   let outputArray = [];
-  for (let i of arr){
-    outputArray.push(i + 2);
+  for (let element of arr){
+    outputArray.push(element + 2);
   }
   return outputArray;
 };
@@ -22,9 +22,7 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => {
-  // Solution code here...
-};
+const typeNum = (arr) => arr.filter((element) => !isNaN(element));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
