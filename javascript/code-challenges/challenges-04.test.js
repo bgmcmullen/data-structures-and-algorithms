@@ -27,10 +27,8 @@ Prove that the original people array is unchanged
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPeople = (arr) => {
-  const newArray = ['Odie', ...arr, 'Garfield'];
-  return newArray;
-};
+const addPeople = (arr) => new Array('Odie', ...arr, 'Garfield');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -45,9 +43,7 @@ Ensure that the original people array and stuff objects are unchanged
 
 ------------------------------------------------------------------------------------------------ */
 
-const setState = (arr, obj) => {
-  // Solution code here...
-};
+const setState = (arr, obj) => ({people: arr, stuff: obj});
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,9 +62,16 @@ Ensure that the original people array and stuff objects are unchanged
 
 ------------------------------------------------------------------------------------------------ */
 
-const newState = (arr, obj) => {
-  // Solution code here...
-};
+const newState = (arr, obj) => ({
+  people: arr,
+  stuff: {
+    ...obj,
+    cars: [...(obj.cars || []), 'Ford'],
+    toothbrush: 'brand new',
+    toys: (obj.toys || 0) + 1
+  }
+})
+
 
 
 /* ------------------------------------------------------------------------------------------------
