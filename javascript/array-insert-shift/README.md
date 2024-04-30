@@ -5,7 +5,9 @@ Write a function called insertShiftArray which takes in an array and a value to 
 ![Whiteboard](shift-array.tldr)
 
 ## Approach & Efficiency
-We shift the second half of an array
+We shifted the second half of an array with by iterating over the second half in reverse and add the new value to the halfway pont.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+
+
+
