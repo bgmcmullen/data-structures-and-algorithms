@@ -4,7 +4,7 @@
 
 ## 401 Challenges
 
-[linked-list](linked-list.index.js)
+[linked-list](linked-list/index.js)
 
 [array-binary-search](array-binary-search/README.md)
 
