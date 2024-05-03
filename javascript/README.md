@@ -4,6 +4,8 @@
 
 ## 401 Challenges
 
+[linked-list](linked-list/README.md)
+
 [array-binary-search](array-binary-search/README.md)
 
 [array-insert-shift](array-insert-shift/README.md)
