@@ -83,5 +83,73 @@ describe('Linked List', () => {
 
   });
 
+  it('Can successfully add a node to the end of the linked list', () => {
+    let newList = new LinkedList();
+
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.append(5);
+
+    expect(newList.toString()).toBe('{ 1 } -> { 3 } -> { 2 } -> { 5 } -> NULL');
+
+  });
+
+  it('Can successfully add multiple nodes to the end of a linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.append(5);
+    newList.append(9);
+
+    expect(newList.toString()).toBe('{ 1 } -> { 3 } -> { 2 } -> { 5 } -> { 9 } -> NULL');
+
+
+  });
+
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insertBefore(3, 5);
+    expect(newList.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 2 } -> NULL');
+
+
+  });
+
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insertBefore(1, 5);
+    expect(newList.toString()).toBe('{ 5 } -> { 1 } -> { 3 } -> { 2 } -> NULL');
+
+
+  });
+
+  it('Can successfully insert after a node in the middle of the linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insertAfter(3, 5);
+    expect(newList.toString()).toBe('{ 1 } -> { 3 } -> { 5 } -> { 2 } -> NULL');
+
+  });
+
+  it('Can successfully insert a node after the last node of the linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(3);
+    newList.insert(1);
+    newList.insertAfter(2, 5);
+    expect(newList.toString()).toBe('{ 1 } -> { 3 } -> { 2 } -> { 5 } -> NULL');
+
+  });
+
+
 
 });
