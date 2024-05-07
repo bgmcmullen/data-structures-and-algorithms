@@ -4,6 +4,8 @@
 
 ## 401 Challenges
 
+[linked-list-insertions](linked-list/Whiteboard.png)
+
 [linked-list](linked-list/index.js)
 
 [array-binary-search](array-binary-search/README.md)
