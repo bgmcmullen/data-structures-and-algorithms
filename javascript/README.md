@@ -4,7 +4,7 @@
 
 ## 401 Challenges
 
-[linked-list-insertions](linked-list/Whiteboard.png)
+[linked-list-insertions](linked-list-insertions.md)
 
 [linked-list](linked-list/index.js)
 

@@ -1,4 +1,4 @@
-# CExtend a Linked List to allow various insertion methods.
+# Extend a Linked List to allow various insertion methods.
 Write the following methods for the Linked List class:
 
 append
