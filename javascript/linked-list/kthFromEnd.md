@@ -7,7 +7,7 @@ Return the node’s value that is k places from the tail of the linked list.
 You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Whiteboard Process
-[Whiteboard](javascript/linked-list/Whiteboard-kthFromEnd.png)
+[Whiteboard](Whiteboard-kthFromEnd.png)
 
 ## Approach & Efficiency
 I used a while loop to find the length of the list then a for loop to find the kth value.
