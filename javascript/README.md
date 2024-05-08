@@ -4,7 +4,7 @@
 
 ## 401 Challenges
 
-[linked-list-insertions](linked-list/linked-list-insertions.md)
+[KthfromEnd](linked-list/kthFromEnd.md)
 
 [linked-list](linked-list/index.js)
 
