@@ -9,6 +9,7 @@ You have access to the Node class and all the properties on the Linked List clas
 ## Whiteboard Process
 [Whiteboard](Whiteboard-kthFromEnd.png)
 
+
 ## Approach & Efficiency
 I used a while loop to find the length of the list then a for loop to find the kth value.
 
