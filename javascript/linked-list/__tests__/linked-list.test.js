@@ -150,6 +150,54 @@ describe('Linked List', () => {
 
   });
 
+  it('Where k is greater than the length of the linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(8);
+    newList.insert(3);
+    newList.insert(1);
+    expect(newList.kthFromEnd(20)).toBe('invalid');
+
+  });
+
+  it('Where k and the length of the list are the same', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(8);
+    newList.insert(3);
+    newList.insert(1);
+    expect(newList.kthFromEnd(4)).toBe('invalid');
+
+  });
+
+  it('Where k is not a positive integert', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(8);
+    newList.insert(3);
+    newList.insert(1);
+    expect(newList.kthFromEnd(-4)).toBe('invalid');
+
+  });
+
+  it('Where the linked list is of a size 1', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+
+    expect(newList.kthFromEnd(0)).toBe(2);
+
+  });
+
+
+  it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let newList = new LinkedList();
+    newList.insert(2);
+    newList.insert(8);
+    newList.insert(3);
+    newList.insert(1);
+    expect(newList.kthFromEnd(2)).toBe(8);
+
+  });
 
 
 });

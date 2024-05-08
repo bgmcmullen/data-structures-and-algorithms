@@ -19,6 +19,28 @@ class LinkedList {
 
   }
 
+  kthFromEnd(k) {
+    let current = this.head;
+    let length = 1;
+    while(current.next !== null) {
+      length++;
+      current = current.next;
+    }
+
+    if(!(k < length && k >= 0))
+      return 'invalid';
+
+    if(length === 1)
+      return this.head.value;
+
+    current = this.head;
+    let index = length - k;
+    for(let i = 0; i < index; i++){
+      current = current.next;
+    }
+    return current.value;
+  }
+
   includes(searchValue) {
     let current = this.head;
 

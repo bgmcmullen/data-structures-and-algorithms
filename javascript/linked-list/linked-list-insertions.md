@@ -1,23 +1,16 @@
-# Extend a Linked List to allow various insertion methods.
-Write the following methods for the Linked List class:
+# k-th value from the end of a linked list.
+Write the following method for the Linked List class:
 
-append
-arguments: new value
-adds a new node with the given value to the end of the list
-
-insert before
-arguments: value, new value
-adds a new node with the given new value immediately before the first node that has the value specified
-
-insert after
-arguments: value, new value
-adds a new
+kth from end
+argument: a number, k, as a parameter.
+Return the node’s value that is k places from the tail of the linked list.
+You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Whiteboard Process
-[Whiteboard](Whiteboard.png)
+[Whiteboard](javascript/linked-list/Whiteboard-kthFromEnd.png)
 
 ## Approach & Efficiency
-I added a new node to a linked list by iterating through it and adding a new node with the correct value, assigning it the current next value, and assigning the previous node its next value.
+I used a while loop to find the length of the list then a for loop to find the kth value.
 
 ## Solution
 [Code](index.js)
