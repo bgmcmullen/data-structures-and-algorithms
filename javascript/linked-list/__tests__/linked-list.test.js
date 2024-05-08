@@ -199,5 +199,57 @@ describe('Linked List', () => {
 
   });
 
+  it('zip list test one', () => {
+    let list1 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    let list2 = new LinkedList();
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    list1.zipLists(list2);
+
+
+    expect(list1.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL');
+
+  });
+
+  it('zip list test one', () => {
+    let list1 = new LinkedList();
+    list1.insert(3);
+    list1.insert(1);
+
+    let list2 = new LinkedList();
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    list1.zipLists(list2);
+
+
+    expect(list1.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL');
+
+  });
+
+  it('zip list test one', () => {
+    let list1 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    let list2 = new LinkedList();
+    list2.insert(9);
+    list2.insert(5);
+
+    list1.zipLists(list2);
+
+
+    expect(list1.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL');
+
+  });
+
 
 });

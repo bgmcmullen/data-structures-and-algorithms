@@ -19,6 +19,26 @@ class LinkedList {
 
   }
 
+  zipLists(list2){
+    let current = this.head;
+    let newListCurrent = list2.head;
+    let nextListOneNode = null;
+    let nextListTwoNode = null;
+    while(current !== null && newListCurrent !== null){
+      if(current.next === null){
+        current.next = nextListTwoNode;
+        break;
+      }
+      nextListOneNode = current.next;
+      nextListTwoNode = newListCurrent.next;
+      newListCurrent.next = current.next;
+      current.next = newListCurrent;
+      current = nextListOneNode;
+      newListCurrent = nextListTwoNode;
+
+    }
+  }
+
   kthFromEnd(k) {
     let current = this.head;
     let length = 1;
