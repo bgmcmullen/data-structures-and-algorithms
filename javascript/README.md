@@ -4,7 +4,7 @@
 
 ## 401 Challenges
 
-[pseudo queue](/stacks-and-queues/pseudo-queue.md)
+[pseudo queue](stacks-and-queues/pseudo-queue.md)
 
 [zip list](linked-list/ziplist.md)
 
