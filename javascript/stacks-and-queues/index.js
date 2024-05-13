@@ -76,7 +76,7 @@ class Queue {
   }
 }
 
-class PseudoStack {
+class PseudoQueue {
   constructor() {
     this.mainStack = new Stack();
     this.reverseStack = new Stack();
@@ -98,4 +98,4 @@ class PseudoStack {
   }
 }
 
-module.exports = { Stack, Queue, PseudoStack};
+module.exports = { Stack, Queue, PseudoQueue};
