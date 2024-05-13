@@ -66,7 +66,7 @@ class Queue {
 
   peek() {
     if (this.front === null)
-      throw new Error("Queue is emtpy!");
+      throw new Error("Queue is empty!");
 
     return this.front.value;
   }
@@ -76,4 +76,26 @@ class Queue {
   }
 }
 
-module.exports = {Stack, Queue};
+class PseudoQueue {
+  constructor() {
+    this.mainStack = new Stack();
+    this.reverseStack = new Stack();
+  }
+  enqueue(value) {
+
+    this.mainStack.push(value);
+  }
+  dequeue() {
+    let output = null;
+    while (this.mainStack.top) {
+      this.reverseStack.push(this.mainStack.pop());
+    }
+    output = this.reverseStack.pop();
+    while (this.reverseStack.top) {
+      this.mainStack.push(this.reverseStack.pop());
+    }
+    return output;
+  }
+}
+
+module.exports = { Stack, Queue, PseudoQueue};

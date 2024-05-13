@@ -4,6 +4,8 @@
 
 ## 401 Challenges
 
+[zip list](linked-list/ziplist.md)
+
 [KthfromEnd](linked-list/kthFromEnd.md)
 
 [linked-list](linked-list/index.js)
