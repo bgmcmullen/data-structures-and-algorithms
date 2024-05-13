@@ -76,4 +76,26 @@ class Queue {
   }
 }
 
-module.exports = {Stack, Queue};
+class PseudoStack {
+  constructor() {
+    this.mainStack = new Stack();
+    this.reverseStack = new Stack();
+  }
+  enqueue(value) {
+
+    this.mainStack.push(value);
+  }
+  dequeue() {
+    let output = null;
+    while (this.mainStack.top) {
+      this.reverseStack.push(this.mainStack.pop());
+    }
+    output = this.reverseStack.pop();
+    while (this.reverseStack.top) {
+      this.mainStack.push(this.reverseStack.pop());
+    }
+    return output;
+  }
+}
+
+module.exports = { Stack, Queue, PseudoStack};

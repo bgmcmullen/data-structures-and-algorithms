@@ -1,4 +1,4 @@
-const { Stack, Queue } = require("../index.js");
+const { Stack, Queue, PseudoStack } = require("../index.js");
 
 it('Can successfully push onto a stack', () => {
   const newStack = new Stack;
@@ -131,4 +131,20 @@ it('Calling dequeue or peek on empty queue raises exception', () => {
 
   expect(() => newQueue.dequeue()).toThrow();
   expect(() => newQueue.peek()).toThrow();
+});
+
+it('can sucessfull enqueue and dequeue from a pseudo staqck', () => {
+  const pseudoStack = new PseudoStack;
+
+  pseudoStack.enqueue(20);
+  pseudoStack.enqueue(15);
+  pseudoStack.enqueue(10);
+  pseudoStack.enqueue(5);
+
+  expect(pseudoStack.dequeue()).toBe(20);
+  expect(pseudoStack.dequeue()).toBe(15);
+  expect(pseudoStack.dequeue()).toBe(10);
+  expect(pseudoStack.dequeue()).toBe(5);
+
+
 });
