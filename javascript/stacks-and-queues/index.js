@@ -66,7 +66,7 @@ class Queue {
 
   peek() {
     if (this.front === null)
-      throw new Error("Queue is emtpy!");
+      throw new Error("Queue is empty!");
 
     return this.front.value;
   }
