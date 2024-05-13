@@ -4,6 +4,8 @@
 
 ## 401 Challenges
 
+[pseudo queue](/stacks-and-queues/pseudo-queue.md)
+
 [zip list](linked-list/ziplist.md)
 
 [KthfromEnd](linked-list/kthFromEnd.md)
