@@ -1,4 +1,4 @@
-const { Stack, Queue, PseudoQueue } = require("../index.js");
+const { Stack, Queue, PseudoQueue, AnimalShelter } = require("../index.js");
 
 it('Can successfully push onto a stack', () => {
   const newStack = new Stack;
@@ -133,7 +133,7 @@ it('Calling dequeue or peek on empty queue raises exception', () => {
   expect(() => newQueue.peek()).toThrow();
 });
 
-it('can sucessfull enqueue and dequeue from a pseudo staqck', () => {
+it('can sucessfull enqueue and dequeue from a pseudo stack', () => {
   const pseudoQueue = new PseudoQueue;
 
   pseudoQueue.enqueue(20);
@@ -147,4 +147,47 @@ it('can sucessfull enqueue and dequeue from a pseudo staqck', () => {
   expect(pseudoQueue.dequeue()).toBe(5);
 
 
+});
+
+describe('AnimalShelter', () => {
+  let shelter;
+
+  beforeEach(() => {
+    shelter = new AnimalShelter();
+  });
+
+  it('should enqueue dogs and cats without errors', () => {
+    expect(() => {
+      shelter.enqueue({ species: 'dog', name: 'Buddy' });
+      shelter.enqueue({ species: 'cat', name: 'Whiskers' });
+      shelter.enqueue({ species: 'dog', name: 'Max' });
+      shelter.enqueue({ species: 'cat', name: 'Mittens' });
+    }).to.not.throw();
+  });
+
+  it('should dequeue dogs correctly based on preference', () => {
+    shelter.enqueue({ species: 'dog', name: 'Buddy' });
+    const dog = shelter.dequeue('dog');
+    expect(dog).to.deep.equal({ species: 'dog', name: 'Buddy' });
+  });
+
+  it('should dequeue cats correctly based on preference', () => {
+    shelter.enqueue({ species: 'cat', name: 'Whiskers' });
+    const cat = shelter.dequeue('cat');
+    expect(cat).to.deep.equal({ species: 'cat', name: 'Whiskers' });
+  });
+
+  it('should dequeue remaining dogs and cats correctly', () => {
+    shelter.enqueue({ species: 'dog', name: 'Max' });
+    shelter.enqueue({ species: 'cat', name: 'Mittens' });
+    const dog = shelter.dequeue('dog');
+    const cat = shelter.dequeue('cat');
+    expect(dog).to.deep.equal({ species: 'dog', name: 'Max' });
+    expect(cat).to.deep.equal({ species: 'cat', name: 'Mittens' });
+  });
+
+  it('should return null for incorrect preference', () => {
+    const bird = shelter.dequeue('bird');
+    expect(bird).to.be.null;
+  });
 });
