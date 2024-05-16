@@ -99,27 +99,47 @@ class PseudoQueue {
 }
 
 class AnimalShelter {
-  constructor(){
+  constructor() {
     this.catQueue = new Queue;
     this.dogQueue = new Queue;
   }
-  enqueue(animal){
-    if(!(animal.species === 'dog' || animal.species === 'cat'))
+  enqueue(animal) {
+    if (!(animal.species === 'dog' || animal.species === 'cat'))
       return 'invalid animal';
-    if(animal.species === 'dog')
+    if (animal.species === 'dog')
       this.dogQueue.enqueue(animal);
-    if(animal.species === 'cat')
+    if (animal.species === 'cat')
       this.catQueue.enqueue(animal);
   }
-  dequeue(pref){
-    if(!(pref === 'dog' || pref === 'cat'))
+  dequeue(pref) {
+    if (!(pref === 'dog' || pref === 'cat'))
       return null;
-    if(pref === 'dog')
+    if (pref === 'dog')
       return this.dogQueue.dequeue();
-    if(pref === 'cat')
+    if (pref === 'cat')
       return this.catQueue.dequeue();
   }
 }
 
 
-module.exports = { Stack, Queue, PseudoQueue, AnimalShelter};
+function validateBrackets(string) {
+  const array = string.split('');
+  let stack = new Stack();
+  let previousBracket = null;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === '{' || array[i] === '[' || array[i] === '(') {
+      stack.push(array[i]);
+    }
+    if (array[i] === '}' || array[i] === ']' || array[i] === ')') {
+      previousBracket = stack.pop();
+      if (!((previousBracket === '{' && array[i] === '}') ||
+        (previousBracket === '[' && array[i] === ']') ||
+        (previousBracket === '(' && array[i] === ')'))) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+module.exports = { Stack, Queue, PseudoQueue, AnimalShelter, validateBrackets };
