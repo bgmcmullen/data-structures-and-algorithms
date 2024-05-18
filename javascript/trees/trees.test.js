@@ -1,0 +1,117 @@
+'use strict';
+
+// tests are chatgpt generated
+const { BinarySearchTree, Node } = require('./index.js');
+
+test('inOrder traversal should return correct order', () => {
+
+  let tree = new BinarySearchTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  expect(tree.inOrder()).toEqual([3, 6, 8, 10, 17, 20, 32, 50]);
+});
+
+test('preOrder traversal should return correct order', () => {
+  let tree = new BinarySearchTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  expect(tree.preOrder()).toEqual([10, 6, 3, 8, 20, 17, 50, 32]);
+});
+
+test('postOrder traversal should return correct order', () => {
+  let tree = new BinarySearchTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  expect(tree.postOrder()).toEqual([3, 8, 6, 17, 32, 50, 20, 10]);
+});
+
+test('add method should insert values correctly', () => {
+  let tree = new BinarySearchTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  tree.add(49);
+  tree.add(2);
+
+  expect(tree.inOrder()).toEqual([2, 3, 6, 8, 10, 17, 20, 32, 49, 50]);
+});
+
+test('contains method should return correct boolean', () => {
+  let tree = new BinarySearchTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  tree.add(49);
+  tree.add(2);
+
+  expect(tree.contains(50)).toBe(true);
+  expect(tree.contains(51)).toBe(false);
+});

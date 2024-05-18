@@ -1,9 +1,9 @@
 ## Whiteboard Process
-[Whiteboard](Whiteboard-animal-shelter.png)
+[Whiteboard](Whiteboard-pseudoQueue.png)
 
 
 ## Approach & Efficiency
-I used the contructor to build two queues one for cats and one for dogs. Then dequeued them form the appropriate list.
+For the enqueue function, I simply used push to add the value to a stack. For the dequeue function, I used a while loop to reverse push the stack into a reversed stack using pop, and then reversed the stack.
 
 ## Solution
 [Code](index.js)
