@@ -62,6 +62,23 @@ class BinaryTree {
     results.push(node.value);
     return results;
   }
+
+
+  getMax(){
+    let output = this.root.value;
+
+    function _traverse(node) {
+      if(node.value > output)
+        output = node.value;
+      if(node.left)
+        _traverse(node.left);
+      if(node.right)
+        _traverse(node.right);
+    }
+    _traverse(this.root);
+    return output;
+  }
+
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -91,4 +108,4 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-module.exports = { BinarySearchTree, Node };
+module.exports = { BinaryTree, BinarySearchTree, Node };

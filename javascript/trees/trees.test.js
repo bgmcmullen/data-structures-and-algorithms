@@ -1,7 +1,7 @@
 'use strict';
 
 // tests are chatgpt generated
-const { BinarySearchTree, Node } = require('./index.js');
+const { BinaryTree, BinarySearchTree, Node } = require('./index.js');
 
 test('inOrder traversal should return correct order', () => {
 
@@ -114,4 +114,46 @@ test('contains method should return correct boolean', () => {
 
   expect(tree.contains(50)).toBe(true);
   expect(tree.contains(51)).toBe(false);
+});
+
+test('get Max should return max value', () => {
+  let tree = new BinaryTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node50 = new Node(50);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node50;
+  node50.left = node32;
+
+  expect(tree.getMax()).toBe(50);
+});
+
+test('get Max should return max value', () => {
+  let tree = new BinaryTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node2 = new Node(2);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node2;
+  node2.left = node32;
+
+  expect(tree.getMax()).toBe(32);
 });
