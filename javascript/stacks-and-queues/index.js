@@ -36,6 +36,17 @@ class Stack {
   isempty() {
     return this.top === null;
   }
+
+  getMax() {
+    let output = this.top.value;
+    let current = this.top;
+    while(current){
+      if(current.value > output)
+        output = current.value;
+      current = current.next;
+    }
+    return output;
+  }
 }
 
 class Queue {

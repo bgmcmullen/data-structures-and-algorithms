@@ -9,6 +9,44 @@ class Node {
   }
 }
 
+class Queue {
+  constructor() {
+    this.front = null;
+    this.rear = null;
+  }
+
+  enqueue(value) {
+    const newNode = new Node(value);
+    if (this.rear === null) {
+      this.front = newNode;
+      this.rear = newNode;
+    } else {
+      this.rear.next = newNode;
+      this.rear = newNode;
+    }
+
+  }
+
+  dequeue() {
+    if (this.front === null)
+      throw new Error("Queue is emtpy!");
+    const oldFront = this.front;
+    this.front = this.front.next;
+    return oldFront.value;
+  }
+
+  peek() {
+    if (this.front === null)
+      throw new Error("Queue is empty!");
+
+    return this.front.value;
+  }
+
+  isempty() {
+    return this.front === null;
+  }
+}
+
 // Binary tree does not have an "Insert" method.
 class BinaryTree {
   constructor(value) {
@@ -77,6 +115,27 @@ class BinaryTree {
     }
     _traverse(this.root);
     return output;
+  }
+
+  breadthFirst() {
+    let results = [];
+
+    let queue = new Queue();
+
+    queue.enqueue(this.root);
+
+    let current = null;
+
+    while(!queue.isempty()){
+      current = queue.peek();
+      if(current.left)
+        queue.enqueue(current.left);
+      if(current.right)
+        queue.enqueue(current.right);
+      current = queue.dequeue();
+      results.push(current.value);
+    }
+    return results;
   }
 
 }
