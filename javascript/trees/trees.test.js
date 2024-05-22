@@ -157,3 +157,44 @@ test('get Max should return max value', () => {
 
   expect(tree.getMax()).toBe(32);
 });
+
+test('breadth-first', () => {
+  let tree = new BinaryTree(10);
+  let node6 = new Node(6);
+  let node3 = new Node(3);
+  let node8 = new Node(8);
+  let node20 = new Node(20);
+  let node17 = new Node(17);
+  let node2 = new Node(2);
+  let node32 = new Node(32);
+
+  tree.root.left = node6;
+  node6.left = node3;
+  node6.right = node8;
+  tree.root.right = node20;
+  node20.left = node17;
+  node20.right = node2;
+  node2.left = node32;
+
+  expect(tree.breadthFirst()).toEqual([10, 6, 20, 3, 8 ,17, 2, 32]);
+});
+
+test('Test Case 1: Binary Tree with Multiple Levels', () => {
+  let tree = new BinaryTree(1);
+  tree.root.left = new Node(2);
+  tree.root.right = new Node(3);
+  tree.root.left.left = new Node(4);
+  tree.root.left.right = new Node(5);
+  tree.root.right.left = new Node(6);
+  tree.root.right.right = new Node(7);
+
+  const result = tree.breadthFirst();
+  expect(result).toEqual([1, 2, 3, 4, 5, 6, 7]);
+});
+
+test('Test Case 2: Binary Tree with a Single Node', () => {
+  let tree = new BinaryTree(1);
+
+  const result = tree.breadthFirst();
+  expect(result).toEqual([1]);
+});

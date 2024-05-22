@@ -148,3 +148,23 @@ it('can sucessfull enqueue and dequeue from a pseudo stack', () => {
 
 
 });
+
+it('getMax', () => {
+  const newStack = new Stack;
+  newStack.push(5);
+  newStack.push(6);
+  newStack.push(7);
+  newStack.push(8);
+  newStack.push(9);
+  expect(newStack.getMax()).toBe(9);
+});
+
+it('getMax', () => {
+  const newStack = new Stack;
+  newStack.push(5);
+  newStack.push(6);
+  newStack.push(7);
+  newStack.push(5);
+  newStack.push(-1);
+  expect(newStack.getMax()).toBe(7);
+});
