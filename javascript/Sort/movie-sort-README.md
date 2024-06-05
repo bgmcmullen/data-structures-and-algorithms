@@ -3,7 +3,7 @@ In the first half of this code challenge, you will write functions which sort do
 
 
 ## Approach & Efficiency
-I sorted the movie arrays with the array sort fuction. Tor the title sort I used a helper function to to strip "the" "a" or "an".
+I sorted the movie arrays with the array sort fuction. Tor the title sort I used a helper function to strip "the" "a" or "an".
 
 ## Solution
 [Code](movie-sort.js)\
