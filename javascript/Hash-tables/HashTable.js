@@ -15,8 +15,8 @@ class HashTable {
   }
 
   get(key) {
-    if(this.map[key])
-      return this.map[key];
+    if(this.map[this.hash(key)])
+      return this.map[this.hash(key)];
     else
       return null;
   }
