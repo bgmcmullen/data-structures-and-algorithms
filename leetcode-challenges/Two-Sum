@@ -3,6 +3,8 @@
  * @param {number} target
  * @return {number[]}
  */
+
+// this was my first solution but it has O(n^2) time complexity
 var twoSum = function(nums, target) {
     for(let i = 0; i < nums.length - 1; i++){
         for(let j = i + 1; j < nums.length; j++){
@@ -11,5 +13,16 @@ var twoSum = function(nums, target) {
             }
         }
     }
-
 };
+
+// can be done with O(n) time complexity with a map
+function twoSum(nums, target){
+  let map = new Map();
+    for(let i = 0; i < nums.length; i++){
+        if(map.has(target - nums[i])){
+            return [i, map.get(target - nums[i])]
+        } else {
+        map.set(nums[i], i);
+        }
+    }
+}
