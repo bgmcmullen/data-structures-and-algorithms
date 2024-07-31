@@ -1,0 +1,65 @@
+var addTwoNumbers = function(l1, l2) {
+    let int1 = '';
+    let int2 = '';
+
+    let current = l1;
+
+    while(current){
+        int1 = current.val.toString() + int1;
+        current = current.next;
+    }
+
+    current = l2;
+
+    while(current){
+        int2 = current.val.toString() + int2;
+        current = current.next;
+    }
+    int1 = BigInt(int1);
+    int2 = BigInt(int2);
+
+    outputInt = int1 + int2;
+
+    console.log(outputInt);
+
+    outputInt = outputInt.toString();
+
+
+    const returnList = new ListNode(null, null);
+
+    current = returnList
+
+
+    for(let i = outputInt.length - 1; i >= 0; i--){
+
+        current.val = outputInt[i];
+        if(i > 0){
+            current.next = new ListNode(outputInt[i], null);
+            current = current.next
+        }
+
+    }
+    return returnList;
+};
+
+// better solution
+var addTwoNumbers = function(l1, l2) {
+    let l1Current = l1;
+    let l2Current = l2;
+
+    let carry = 0;
+    while(l1Current || l2Current || carry > 0){
+        l1Current.val += (l2Current?.val || 0) + carry;
+        carry = 0
+        if(l1Current.val > 9){
+            carry = Math.floor(l1Current.val / 10);
+            l1Current.val = l1Current.val % 10;
+        }
+        if(!l1Current.next && (carry > 0 || l2Current?.next)){
+            l1Current.next = new ListNode(0, null);
+        }
+        l1Current = l1Current?.next;
+        l2Current = l2Current?.next;
+    }
+    return l1;
+};
