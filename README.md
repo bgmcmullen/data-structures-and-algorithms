@@ -12,7 +12,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
 
-To run your tests
+To run your tests:
 
 - Change to the `javascript` folder
 - run `npm test` to run all of the tests
